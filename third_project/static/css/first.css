@@ -1,0 +1,9 @@
+body{
+    background-color: yellowgreen;
+}
+h1{
+    color: red;
+    border: 2px solid blue;
+    text-align: center;
+    font-size: 50px;
+}
