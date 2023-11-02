@@ -44,4 +44,25 @@
     1. Look at second_project
 
 # Rendering Template
-    
+    As Django follows MVT where T stands for template . So when we show any html file we actually render it for this 
+    1. Make a templates file in root folder and inside it make html files
+    2. Go to Views.py and import render from django.shortcuts
+    3. We also need to let the settings know about this . For this go to setting.py -- TEMPLATES -- 'DIRS': [BASE_DIR/"templates"],
+    4. From views.py return render (request,'html_filename')
+
+# Static File 
+    |---> Unchanged (image,css,video,audio,js)
+    1. Make a static folder in the base directory
+    2. add folders in that according to needs like css , image , js
+    3. Django never let you use static file directly
+        Settings.py
+            |---> static url STATICFILES_DIRS =[
+                                BASE_DIR / "static",
+                           ]
+    4. HTML (<img src="{% static 'image/pp.png' %}" alt="My pic">)
+    5. {% load static %} ON TOP OF HTML FILE
+    6. For app the processes are same just make sure files name are not the same 
+        views.py path = (./first_app/indexx.html)
+# Dynamic File
+    |---> Changeable
+    |---> Comes from backend
