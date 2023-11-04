@@ -1,7 +1,7 @@
 # Django
 
 
-# Django Installation
+## Django Installation
     1. First Create a Virtual Environment For Project it can be global or local . 
             pip install virtualenv
             virtualenv --version (check version)
@@ -12,12 +12,12 @@
     4. After this install Django
             pip install django
             python -m django --version (check version )
-# Create Django project
+## Create Django project
     1. django-admin startproject first_project
     2. cd first_project
     3. python manage.py runserver To run the aplication
 
-# Project Directory Stracture
+## Project Directory Stracture
 
     init.py : Python packages / all logical work 
     wsgi.py : Web server gateway / how the website will communicate with server
@@ -26,13 +26,13 @@
     urls.py : All the urls of project
     manage.py : command line utility 
 
-# Working with URLS
+## Working with URLS
     1. Create url  || path('',views.home),
     2. Hit url 
     3. views will return whatever it has 
         in Django everything we need to return we return it in HttpResponse. For this we need to import HttpResponse from django.http in views file
 
-# Create App
+## Create App
     1. -> django-admin startapp app_name (command line)
     2. Go to settings.py and add it to the settings
     3. Go to urls.py and include it
@@ -40,17 +40,17 @@
         -> path('first_app/', include('first_app.urls'))
     4. make urls.py in the app do the rest
 
-# Nevigation 
+## Nevigation 
     1. Look at second_project
 
-# Rendering Template
+## Rendering Template
     As Django follows MVT where T stands for template . So when we show any html file we actually render it for this 
     1. Make a templates file in root folder and inside it make html files
     2. Go to Views.py and import render from django.shortcuts
     3. We also need to let the settings know about this . For this go to setting.py -- TEMPLATES -- 'DIRS': [BASE_DIR/"templates"],
     4. From views.py return render (request,'html_filename')
 
-# Static File 
+## Static File 
     |---> Unchanged (image,css,video,audio,js)
     1. Make a static folder in the base directory
     2. add folders in that according to needs like css , image , js
@@ -63,6 +63,24 @@
     5. {% load static %} ON TOP OF HTML FILE
     6. For app the processes are same just make sure files name are not the same 
         views.py path = (./first_app/indexx.html)
-# Dynamic File
+## Dynamic File / Media file
     |---> Changeable
     |---> Comes from backend
+    1. Go to settings and add this MEDIA_ROOT = BASE_DIR/"media"
+                                   MEDIA_URL = 'media/'
+    
+    2. Go to urls and add 
+            from django.conf import settings
+            from django.conf.urls.static import static
+            + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
+
+## Add Boostrap to Django
+    1. Simple AF just add boostrap in tour template html 
+
+
+## URL Tag 
+    1. path('home/',views.home,name = "homepage"),
+    2. href="{% url 'homepage' %}"
+
+## Template Inheritance
+    
