@@ -83,4 +83,21 @@
     2. href="{% url 'homepage' %}"
 
 ## Template Inheritance
+    1. extends Tag
+        * {% extends 'parent_template_name' %} IN CHILD File
+
+    2. block Tag
+        * {% block title %}....{% endblock %} / <title>{% block title %}{% endblock %}</title> in base.html
+
+## Creating Custom Template and Template Tags
+    1. Create a new folder in first app named templatetags
+
+
+## HTML Forms in Django
+    1. Use CSRF token
+    2. Get / post request
+    3. Action
+    4. email = request.POST.get('email') using this we get the input value in views.py
+
+## Django Build in Form api
     
