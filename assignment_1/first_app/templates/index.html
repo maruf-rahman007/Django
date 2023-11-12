@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+
+Meals
+
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for meal in meals %}
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ meal.strMealThumb }}" alt="{{ meal.strMeal }}">
+                <div class="card-body">
+                    <h2 class="card-title">{{ meal.strMeal }}</h2>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis ducimus officiis,
+                        ipsa odit doloremque at minima et magnam sequi iste commodi dolores minus quam dolore
+                        similique sit cum ipsum enim.
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
