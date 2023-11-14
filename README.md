@@ -101,3 +101,13 @@
 
 ## Django Build in Form api
     
+
+# Django Models
+
+##    Orm
+        Object Relation Mapping that helps application to interact with databases. Converts python code to mysql code.
+        QuerySet can be defined as a list containing all those objects we have created using Django models. it helps us to 
+            1. Read Data 
+            2. Filter Data 
+            3. Order Data
+
