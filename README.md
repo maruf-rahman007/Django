@@ -105,9 +105,46 @@
 # Django Models
 
 ##    Orm
-        Object Relation Mapping that helps application to interact with databases. Converts python code to mysql code.
+        It's a Midium. Object Relation Mapping that helps application to interact with databases. Converts python code to mysql code.
         QuerySet can be defined as a list containing all those objects we have created using Django models. it helps us to 
             1. Read Data 
             2. Filter Data 
             3. Order Data
 
+##    Model
+        It is a source of information that holdes information of data and it's behaviour
+        Each models denotes a table in database , Each attribute represents a database field.
+        Django provides in build sqllite but we can use others if we need
+
+##    Migrations
+        It's basically a way of saying django to add those model changes 
+
+                (makemigration)      (migrate)
+        Model Class -------> SQL code -------> Exicute SQL 
+
+        showmigrations shows the changes
+        
+    1. You will find models in every app inbuild just go there and create a class with necessary fields 
+        ex : 
+            class Student(models.Model):
+            name = models.CharField(max_length=20)
+            roll = models.IntegerField(primary_key=True)
+            address = models.TextField()
+    2. Then use the command 
+        * python manage.py makemigrations (Create SQL DB)
+        * python manage.py migrate (Run that)
+    3. If you add any extra fiels after this you need to set a default value for that and then do the same commands
+
+##    Admin / SuperUser
+
+    1. python manage.py createsuperuser
+    2. You need to let django know that you want to give access to admin for that perticular database and for this 
+       go to first_app then admin.py and import models (from . import models)
+       and then  admin.site.register(models.Student)
+    3. To see by the name in the admin panel add a simple function __str__ in models.py
+            def __str__(self):
+                return self.name
+    4. Go to views.py & 
+        * from . import models
+        * student = models.Student.objects.all()
+    
