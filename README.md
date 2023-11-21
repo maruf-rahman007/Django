@@ -147,4 +147,7 @@
     4. Go to views.py & 
         * from . import models
         * student = models.Student.objects.all()
+    5. Pass this as dictionery
+        * return render(request,"home.html", {'data': student})
+    
     
